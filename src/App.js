@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import HomePage from './pages/homepage/HomePage'
 
 class App extends React.Component{
   constructor(){
@@ -18,9 +19,7 @@ class App extends React.Component{
   render(){
     return(
       <div className='App'>
-        {
-          this.state.monsters.map(monster => <h2 key={monster.id}>{monster.name}</h2>)
-        }
+        <HomePage />
       </div>
     )
   }
