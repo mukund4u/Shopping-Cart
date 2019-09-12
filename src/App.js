@@ -1,28 +1,19 @@
 import React from 'react';
 import './App.css';
+import {Switch,Route} from 'react-router-dom';
 import HomePage from './pages/homepage/HomePage'
+import ShopPage from './pages/shoppage/shop';
 
-class App extends React.Component{
-  constructor(){
-    super();
-    this.state = {
-      monsters : [ ]
-    };
-  }
-  
-  componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(uesrs => this.setState({monsters: uesrs}));
-  }
-
-  render(){
-    return(
-      <div className='App'>
-        <HomePage />
-      </div>
-    )
-  }
+function App(){
+  return(
+    <div>
+      <Switch>
+        <Route exact path='/' component={HomePage}/>
+        <Route exact path='/shop' component={ShopPage}/>
+      </Switch>
+    </div>
+  )
 }
+
 
 export default App;
